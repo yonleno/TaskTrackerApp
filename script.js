@@ -39,8 +39,8 @@ function handleSubmission(event) {
 
     render();
     }
-    // Function to render tasks in the table
-    function render() {
+// Function to render tasks in the table
+function render() {
     // TODO: Use array methods to create a new table row of data for each item in the arr
     taskTable.innerHTML = tasks.map(task => `
         <tr>
@@ -52,9 +52,15 @@ function handleSubmission(event) {
         </tr>
     `).join('');
     }
-    // Function to initialize the table
-    function init() {
+// Function to initialize the table
+function init() {
     taskTable.innerHTML = ''; // Clear the table
     tasks = []; // Reset the tasks array
     render(); // Call the render function
     }
+
+// Event listener for form submission
+taskForm.addEventListener('submit', handleSubmission);
+
+// Call the init function to set up the initial state of the app
+init();
